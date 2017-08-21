@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html lang="nl-nl">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<title>SBrick Basics</title>
+	<link rel="stylesheet" href="css/base.css">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+</head>
+<body>
+
+	<div id="connect-functions" class="connect-functions">
+		<a href="#" id="connect-btn">Connect with SBrick</a>
+	</div>
+
+	<div id="control-functions" class="control-functions is-hidden">
+		<p>
+			<a href="#" id="lights-btn-start">Lights on</a> (top left)<br>
+			<a href="#" id="lights-btn-stop">Lights off</a>
+		</p>
+		<p>
+			<a href="#" id="motor-btn-start">Start drive motor</a> (bottom left)<br>
+			<a href="#" id="motor-btn-stop">Stop drive motor</a>
+		</p>
+		<p>
+			<a href="#" id="servo-btn-start">Rotate servo motor</a> (top right)<br>
+			<a href="#" id="servo-btn-stop">Reset servo motor</a>
+		</p>
+	</div>
+
+
+
+
+	<div id="log-window" class="log-window">
+		<a href="#" id="clear-log">clear</a>
+		<div id="log-msg-box"></div>
+	</div>
+
+
+	<script src="js/vendor/promise-queue.js"></script>
+	<script src="js/vendor/bluetooth.js"></script>
+	<script src="js/vendor/sbrick.js"></script>
+	<script src="js/util.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
