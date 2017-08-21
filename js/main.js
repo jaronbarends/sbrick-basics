@@ -109,6 +109,33 @@
 		e.preventDefault();
 		mySBrick.stop(PORTS.PORT_TOP_RIGHT);
 	};
+
+
+	/**
+	* get 1 reading from a sensor (tilt or motion)
+	* @returns {undefined}
+	*/
+	const getSensorReading = function(e) {
+		mySBrick.getSensor(PORTS.PORT_BOTTOM_RIGHT, 'wedo')
+			.then((result) => {// result: { type, voltage, ch0_raw, ch1_raw, value }
+				document.getElementById('sensor-output-type').textContent = result.type;
+				document.getElementById('sensor-output-value').textContent = result.value;
+			});
+	};
+
+
+	/**
+	* get 1 reading from a sensor (tilt or motion)
+	* @returns {undefined}
+	*/
+	const getBatteryLevel = function(e) {
+		mySBrick.getTemp()
+			.then((temperature) => {
+				temperature = Math.round(10 * temperature)/10;
+				document.getElementById('battery-output').textContent = temperature + '°C';
+			});
+	};
+	
 	
 	
 
@@ -126,6 +153,8 @@
 		document.getElementById('motor-btn-stop').addEventListener('click', stopMotor);
 		document.getElementById('servo-btn-start').addEventListener('click', rotateServo);
 		document.getElementById('servo-btn-stop').addEventListener('click', resetServo);
+		document.getElementById('sensor-reading').addEventListener('click', getSensorReading);
+		document.getElementById('battery').addEventListener('click', getBatteryLevel);
 	};
 	
 	
